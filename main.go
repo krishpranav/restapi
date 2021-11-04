@@ -45,6 +45,6 @@ curl http://localhost:8080/createuser \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '{"user": "krish", "password": "krish"}'
+    --data '{"user": "user", "password": "password"}'
 
 use this command to create new user */
