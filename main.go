@@ -5,9 +5,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/krishpranav/restapi/user"
 )
 
-var usertable = []user{}
+var usertable = []user.UserStruct{
+	{User: "UserOne", Password: "PasswordTwo"},
+	{User: "UserThree", Password: "PasswordThree"},
+}
 
 func main() {
 	router := gin.Default()

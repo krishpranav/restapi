@@ -1,7 +1,7 @@
 /* user defining */
 package user
 
-type user struct {
+type UserStruct struct {
 	User     string `json:"user"`
 	Password string `json:"password"`
 }
