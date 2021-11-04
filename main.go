@@ -7,15 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type user struct {
-	UserName string `json:"username"`
-	Password string `json:"password"`
-}
-
-var usertable = []user{
-	{UserName: "UserOne", Password: "StrongPassword"},
-	{UserName: "UserTwo", Password: "StrongPasswordTwo"},
-}
+var usertable = []user{}
 
 func main() {
 	router := gin.Default()
