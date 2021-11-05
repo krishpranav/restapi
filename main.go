@@ -4,6 +4,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/krishpranav/restapi/user"
 )
@@ -15,6 +16,9 @@ var usertable = []user.UserStruct{
 
 func main() {
 	router := gin.Default()
+
+	/* call the builded folder */
+	router.Use(static.Serve("/", static.LocalFile("./views/build", true)))
 
 	router.GET("/user", getUser)
 	router.POST("/createuser", postUser)
