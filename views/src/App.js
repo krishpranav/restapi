@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import logo from './logo.svg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class UserComponent extends React.Component {
+  componentDidMount() {
+    const userApi = 'http://localhost:8080/user'
+    fetch (userApi)
+      .then((response) => response.json())
+      .then((data) => console.log('User Api Request', data))
+  }
+
+  render() {
+    
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            See The Console For Api Request
+            </p>
+          </header>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default UserComponent;
